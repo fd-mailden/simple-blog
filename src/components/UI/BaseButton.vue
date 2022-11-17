@@ -19,5 +19,7 @@ export default {
     border-radius: 10px;
     padding: 12px;
     min-width: 135px;
+    background-color: #fff;
+
 }
 </style>

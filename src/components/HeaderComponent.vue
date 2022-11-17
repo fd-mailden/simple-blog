@@ -5,7 +5,7 @@
             <NavigationMenu/>
         </div>
         <div class="login">
-            <base-icon componentName = "SearchIcon"/>
+            <base-icon componentName = "SearchIcon" class = 'icon'/>
             <base-button>Login</base-button>
         </div>
         
@@ -25,9 +25,8 @@ export default {
         padding: 31px 25px;
         display: flex;
         justify-content: space-between;
-        max-width: 1316px;
-        
-
+        max-width: $app-width;
+        padding: 0 16px;
     }
     .navigate{
         display: flex;
@@ -36,5 +35,8 @@ export default {
     .login{
         display: flex;
         align-items: center;
+    }
+    .icon{
+        margin-right: 21px;
     }
 </style>
