@@ -1,16 +1,31 @@
 <template >
     <div class="card">
-        <img class="card__image" src='@/assets/image/ArticleImage.png' />
+        <img class="card__image" v-bind:src="post_item.image" />
         <div class="post">
-            <CardFields />
+            <CardFields :post="post_item"/>
         </div>
     </div>
 
 </template>
 <script>
 import CardFields from './CardFields.vue';
+import ArticleImage from '@/assets/image/ArticleImage.png'
 export default {
-    components: { CardFields }
+    components: { CardFields },
+    data() {
+    return {
+      post_item: {
+        image: ArticleImage,
+        post_type: 'FEATURED ARTICLE',
+        title: 'World’s Most Dangerous Technology Ever Made.',
+        artist: 'Ralph Hawkins',
+        date: 'May 7, 2019 (10 mins read)',
+        text: 'Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor anim excepteur. In aliquip mollit nulla consequat velit magna.'
+
+      },
+    }
+  }
+    
 }
 </script>
 <style lang="scss" scoped>

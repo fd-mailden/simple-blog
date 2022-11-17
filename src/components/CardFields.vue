@@ -1,20 +1,47 @@
 <template lang="">
-            <p class="post__type">FEATURED ARTICLE</p>
-            <h2 class="post__title">World’s Most Dangerous Technology Ever Made.</h2>
-            <ul class="post__info">
-                <p class="post__artist">Ralph Hawkins</p>
-                <li class="post__date">May 7, 2019 (10 mins read)</li>
+            <p class="post__type">{{post?.post_type}}</p>
+            <h2 class="post__title" :class = "{
+                'sm': size ==='sm',
+            }">{{post?.title}}</h2>
+            <ul class="post__info" :class = "{
+                'sm-info': size ==='sm',
+            }">
+                <p class="post__artist">{{post?.artist}}</p>
+                <li class="post__date">{{post?.date}}</li>
             </ul>
-            <div class="post__text">
-                Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor anim excepteur. In aliquip mollit nulla consequat velit magna.
-            </div>
+            <div class="post__text" :class = "{
+                'sm': size ==='sm',
+            }">
+               {{post?.text}}
+           </div>
 </template>
 <script>
 export default {
+   
+    props: {
+        post: {
+            type: Object,
+        },
+        size: {
+            type: String
+        }
+    },
+    created(){
+        console.log(this.post)
+    },
 
 }
 </script>
 <style lang="scss" scoped>
+.sm {
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical;
+    line-clamp: 2 !important;
+    box-orient: vertical;
+}
+.sm-info{
+    margin: 3px 0 11px !important;
+}
 .post {
 
     &__type {

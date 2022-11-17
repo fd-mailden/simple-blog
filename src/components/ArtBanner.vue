@@ -1,16 +1,32 @@
 <template lang="">
     <section class="banner">
-        <img src='@/assets/image/ArticleImage.png' alt="" class = 'banner__background'>
-        <article class = 'post'>
-            <CardFields/>
+        <img v-bind:src="post_item?.image" alt="bg" class = 'banner__background'>
+        <article class = "post" v-bind:class = "{'right-style' :card_style}" >
+            <CardFields :post = 'post_item'/>
         </article>
-        
     </section>
 </template>
+
 <script>
 import CardFields from './CardFields.vue'
 export default {
-    components: { CardFields }
+    components: { CardFields },
+
+    props: {
+        post_item: {
+            type: Object,
+            required: true,
+        },
+        card_style: {
+            type: String
+        }
+
+    },
+    data() {
+        return {
+
+        }
+    },
 }
 </script>
 <style lang="scss" scoped>
@@ -26,6 +42,13 @@ export default {
         top: 0;
         left: 0;
     }
+
+
+}
+.right-style{
+    position: absolute;
+    right: 86px;
+    top: 54px;
 
 }
 

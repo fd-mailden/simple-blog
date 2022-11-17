@@ -1,8 +1,8 @@
 <template lang="">
     <nav class="nav">
-        <a href="" class = "nav__link">Home</a>
-        <a href="" class = "nav__link">Tags</a>
-        <a href="" class = "nav__link">About</a>
+        <router-link to="/" class = 'nav__link'>Home</router-link>
+        <router-link to="/tags" class = 'nav__link'>Tags</router-link>
+        <router-link to="/about" class = 'nav__link'>Tags</router-link>
     </nav>
 </template>
 <script>
