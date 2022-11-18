@@ -2,7 +2,7 @@
     <nav class="nav">
         <router-link to="/" class = 'nav__link'>Home</router-link>
         <router-link to="/tags" class = 'nav__link'>Tags</router-link>
-        <router-link to="/about" class = 'nav__link'>Tags</router-link>
+        <router-link to="/about" class = 'nav__link'>About</router-link>
     </nav>
 </template>
 <script>

@@ -9,7 +9,7 @@ export default {
 
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .button {
     font-family: 'Libre Baskerville';
     font-weight: 400;
