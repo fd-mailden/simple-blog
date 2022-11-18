@@ -38,5 +38,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '~@/assets/styles/app/_about.scss';
+@import '~@/assets/styles/app/_comp-about.scss';
 </style>

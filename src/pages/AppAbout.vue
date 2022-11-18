@@ -31,78 +31,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.logo {
-    margin: 200px auto;
-    max-width: 370px;
-    text-align: center;
-
-    &__image {
-        width: 251px;
-    }
-
-    &__text {
-        margin-top: 25px;
-        font-family: 'Libre Baskerville';
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 30px;
-    }
-}
-
-.bottom-info {
-    color: $border-color;
-    max-width: 427px;
-    margin: 200px auto;
-    text-align: center;
-
-    &__title {
-        font-family: 'Libre Baskerville';
-        font-weight: 400;
-        font-size: 42px;
-        line-height: 52px;
-        margin-bottom: 35px;
-    }
-
-    &__text {
-        font-family: 'Open Sans';
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-    }
-
-}
-
-.about-footer {
-    background-color: $border-color;
-    padding: 120px;
+@import '~@/assets/styles/app/_app-about.scss';
 
 
-}
-
-.footer-info {
-    margin: 0 auto;
-    color: $main-white;
-    text-align: center;
-    max-width: 332px;
-
-    &__title {
-        font-family: 'Libre Baskerville';
-        font-weight: 400;
-        font-size: 33px;
-    }
-
-    &__text {
-        font-family: 'Open Sans';
-        font-weight: 400;
-        font-size: 16px;
-        margin-top: 17px;
-        margin-bottom: 28px;
-    }
-}
-.social-media{
-    
-    &__item{
-        margin: 0 8px;
-    }
-}
 </style>
