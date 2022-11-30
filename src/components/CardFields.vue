@@ -17,7 +17,7 @@
 </template>
 <script>
 export default {
-   
+
     props: {
         post: {
             type: Object,
@@ -25,9 +25,6 @@ export default {
         size: {
             type: String
         }
-    },
-    created(){
-        console.log(this.post)
     },
 
 }
@@ -39,9 +36,11 @@ export default {
     line-clamp: 2 !important;
     box-orient: vertical;
 }
-.sm-info{
+
+.sm-info {
     margin: 3px 0 11px !important;
 }
+
 .post {
 
     &__type {

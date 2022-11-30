@@ -1,14 +1,19 @@
 <template lang="">
-    <ul class = "tags-list">
+    <ul class = "tags-list" v-if="tags.length > 0">
             <li v-for="tag in tags" :key= "tag" class = "tag" >#{{tag}}</li>
     </ul>
 </template>
 <script>
-import { TAGS } from '@/consts/tags'
 export default {
+    props: {
+        tags: {
+            type: Array
+        }
+    },
+  
     data() {
         return {
-            tags: TAGS,
+            
         }
     }
 }

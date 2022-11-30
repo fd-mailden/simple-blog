@@ -1,6 +1,10 @@
 <template lang="">
     <form class = "input-wrapper">
-        <input type="text" class="input" placeholder = "Find the topics you care about...">
+        <input type="text"
+        :value = "modelValue"
+         @input = "updateInput"
+            class="input"
+            placeholder = "Find the topics you care about...">
         <button type = "submit" class = "button">
             <base-icon componentName = "SearchIcon"/>
         </button>
@@ -8,7 +12,14 @@
 </template>
 <script>
 export default {
-
+    props: {
+        modelValue: [String, Number]
+    },
+    methods: {
+        updateInput(event) {
+            this.$emit('update:modelValue', event.target.value)
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>

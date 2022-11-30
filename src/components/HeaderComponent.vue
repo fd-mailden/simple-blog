@@ -5,7 +5,7 @@
             <NavigationMenu/>
         </div>
         <div class="login">
-            <base-icon componentName = "SearchIcon" class = 'icon'/>
+            <HeaderSearch/>
             <base-button>Login</base-button>
         </div>
         
@@ -13,30 +13,35 @@
 </template>
 <script>
 import NavigationMenu from './NavigationMenu.vue';
+import HeaderSearch from './HeaderSearch.vue';
 export default {
     components: {
-        NavigationMenu,
+        NavigationMenu, HeaderSearch,
     }
 }
 </script>
 <style lang="scss" scoped>
-    .header{
-        margin: 0 auto;
-        padding: 31px 25px;
-        display: flex;
-        justify-content: space-between;
-        max-width: $app-width;
-        padding: 0 16px;
-    }
-    .navigate{
-        display: flex;
-        align-items: center;
-    }
-    .login{
-        display: flex;
-        align-items: center;
-    }
-    .icon{
-        margin-right: 21px;
-    }
+.header {
+    margin: 0 auto;
+    padding: 31px 25px;
+    display: flex;
+    justify-content: space-between;
+    max-width: $app-width;
+    padding: 0 16px;
+}
+
+.navigate {
+    display: flex;
+    align-items: center;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    
+}
+
+.icon {
+    margin-right: 21px;
+}
 </style>

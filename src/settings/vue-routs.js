@@ -1,11 +1,14 @@
-export const ROUTER  = {
-    MAIN:{
-        path: '/'
+export const ROUTER = {
+    MAIN: {
+        path: '/',
+        name: 'Main',
     },
-    ABOUT:{
-        path: '/about'
+    ABOUT: {
+        path: '/about',
+        name: 'About',
     },
-    TAGS:{
-        path: '/tags'
+    TAGS: {
+        path: '/tags',
+        name: '/Tags'
     },
 }
