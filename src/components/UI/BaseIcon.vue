@@ -1,11 +1,7 @@
-
-  
 <script>
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent } from "vue";
 export default {
-
-  name: 'base-icon',
-
+  name: "base-icon",
   props: {
     componentName: {
       type: String,
@@ -15,14 +11,17 @@ export default {
 
   computed: {
     currentIcon() {
-      return defineAsyncComponent(() => import(`../icons/${this.componentName}.vue`));
+      return defineAsyncComponent(() =>
+        import(`../icons/${this.componentName}.vue`)
+      );
     },
   },
 };
 </script>
 <template>
-    <component :is="currentIcon" v-bind="$attrs" />
+  <component :is="currentIcon" v-bind="$attrs" />
 </template>
+
 <style lang="scss" scoped>
 .icon-wrap {
   display: inline-block;

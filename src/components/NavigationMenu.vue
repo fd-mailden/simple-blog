@@ -3,9 +3,6 @@
 import {ROUTER, } from '@/settings/vue-routs'
 export default {
     components: [ROUTER, ],
-    created(){
-        console.log(ROUTER)
-    }
 }
 </script>
 

@@ -1,0 +1,48 @@
+.author-wrapper {
+    max-width: 655px;
+    margin: 0 auto 167px;
+}
+
+.about {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: $main-gray;
+    text-transform: uppercase;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+
+    &__image {
+        max-width: 160px;
+        max-height: 160px;
+        border-radius: 50%;
+    }
+
+    &__info {
+        margin-left: 37px;
+    }
+
+    &__name {
+        font-family: 'Libre Baskerville';
+        font-weight: 700;
+        font-size: 33px;
+        line-height: 41px;
+        color: $texts-color;
+    }
+
+    &__nick {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: $main-gray;
+        margin-bottom: 13px;
+    }
+}
