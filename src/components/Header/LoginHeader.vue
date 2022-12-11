@@ -21,10 +21,10 @@ export default {
 <style lang="scss" scoped>
 .header {
   margin: 0 auto;
-  padding: 31px 25px 31px 45px;
+  padding: 31px 45px 31px 25px;
   display: flex;
   justify-content: space-between;
   max-width: $app-width;
-  padding: 25px 16px;
+  padding: 11px 16px;
 }
 </style>
