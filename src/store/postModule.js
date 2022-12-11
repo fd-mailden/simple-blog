@@ -7,6 +7,8 @@ export const postModule = {
     authors: AUTHORS,
     currentPost: {},
     currentAuthor: {},
+    searchedPost: POSTS,
+    searchQuery: "",
   }),
   mutations: {
     setCurrentPost(state, post) {
@@ -15,8 +17,28 @@ export const postModule = {
     setCurrentAuthor(state, author) {
       state.currentAuthor = author;
     },
+    setSearchedPost(state, posts) {
+      state.searchedPost = posts;
+    },
+    setSearchQuery(state, text) {
+      state.searchQuery = text;
+    },
   },
-  getters: {},
+  getters: {
+    getLastPosts(state) {
+      let newPosts = [...state.posts];
+      return newPosts.splice(-3);
+    },
+    searchPosts(state) {
+      if (!state.searchQuery) {
+        return state.posts;
+      }
+      return state.posts.filter((post) =>
+        post.title.toLowerCase().includes(state.searchQuery.toLowerCase())
+      );
+    },
+  },
+
   actions: {
     getPostInfo({ state, commit }, postId) {
       let currentPost = state.posts.find((post) => post.id == postId);
@@ -27,6 +49,19 @@ export const postModule = {
       );
       if (!currentAuthor) return null;
       commit("setCurrentAuthor", currentAuthor);
+    },
+
+    searchingPosts({ state, commit }, title) {
+      if (!state.searchQuery) {
+        commit("setSearchedPost", state.posts);
+      }
+
+      let newPosts = state.posts.filter((post) =>
+        post.title.toLowerCase().includes(title.toLowerCase())
+      );
+      if (newPosts.length > 0) {
+        commit("setSearchedPost", newPosts);
+      }
     },
   },
 

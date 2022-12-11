@@ -1,3 +1,6 @@
+<template>
+  <component :is="currentIcon" v-bind="$attrs" />
+</template>
 <script>
 import { defineAsyncComponent } from "vue";
 export default {
@@ -18,10 +21,6 @@ export default {
   },
 };
 </script>
-<template>
-  <component :is="currentIcon" v-bind="$attrs" />
-</template>
-
 <style lang="scss" scoped>
 .icon-wrap {
   display: inline-block;

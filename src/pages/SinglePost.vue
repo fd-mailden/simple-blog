@@ -9,24 +9,7 @@ export default {
   components: {
     PostComponent,
   },
-  data() {
-    return {
-      id: this.$route.params.id,
-      authorData: {},
-    };
-  },
 
-  mounted() {
-
-  },
-  computed: {
-   
-  },
-  watch: {
-    id(){
-      console.log('page'+this.id);
-    }
-  }
 };
 </script>
 

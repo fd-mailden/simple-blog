@@ -9,10 +9,15 @@ export const ROUTER = {
   },
   TAGS: {
     path: "/tags",
-    name: "/Tags",
+    name: "Tags",
   },
   POST: {
     path: "/post/:id",
     generate: (id) => `/post/${id}`,
   },
+  LOGIN: {
+    path: "/login",
+    name: "Login",
+  },
 };
+

@@ -1,36 +1,42 @@
-
 <script>
-import {ROUTER, } from '@/settings/vue-routs'
+import { ROUTER } from "@/settings/vue-routs";
 export default {
-    components: [ROUTER, ],
-}
+  data() {
+    return {
+      ROUTER,
+    };
+  },
+};
 </script>
 
 <template lang="">
-    <nav class="nav">
-        <router-link to="/" class = 'nav__link' >Home</router-link>
-        <router-link to="/tags" class = 'nav__link'>Tags</router-link>
-        <router-link to="/about" class = 'nav__link'>About</router-link>
-    </nav>
+  <nav class="nav">
+    <router-link :to="ROUTER.MAIN.path" class="nav__link">{{
+      ROUTER.MAIN.name
+    }}</router-link>
+    <router-link :to="ROUTER.TAGS.path" class="nav__link">{{
+      ROUTER.TAGS.name
+    }}</router-link>
+    <router-link :to="ROUTER.ABOUT.path" class="nav__link">{{
+      ROUTER.ABOUT.name
+    }}</router-link>
+  </nav>
 </template>
-
 
 <style lang="scss" scoped>
 .nav {
-    padding: 25px;
+  padding: 25px;
 
-    &__link {
-        margin: 0 31px;
-        font-family: 'Libre Baskerville';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        color: $main-black;
-    
-    }
+  &__link {
+    margin: 0 31px;
+    font-family: "Libre Baskerville";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: $main-black;
+  }
 }
-.router-link-active{
-    font-weight: 700;
-    
+.router-link-active {
+  font-weight: 700;
 }
 </style>

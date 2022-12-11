@@ -1,26 +1,43 @@
-import AppMain from "@/pages/AppMain";
-import AppTags from "@/pages/AppTags";
-import AppAbout from "@/pages/AppAbout";
-import SinglePost from "@/pages/SinglePost";
+
+
 import { ROUTER } from "@/settings/vue-routs";
 import { createRouter, createWebHistory } from "vue-router";
-
+import {LAYOUT_NAMES} from '@/settings/rout-constants'
 const routes = [
   {
     path: ROUTER.MAIN.path,
-    component: AppMain,
+    component: () => import("@/pages/AppMain"),
+    meta: {
+      layout: LAYOUT_NAMES.DEFAULT,
+    },
   },
   {
     path: ROUTER.TAGS.path,
-    component: AppTags,
+    component: () => import("@/pages/AppTags"),
+    meta: {
+      layout: LAYOUT_NAMES.DEFAULT,
+    },
   },
   {
     path: ROUTER.ABOUT.path,
-    component: AppAbout,
+    component: () => import("@/pages/AppAbout"),
+    meta: {
+      layout: LAYOUT_NAMES.DEFAULT,
+    },
   },
   {
     path: ROUTER.POST.path,
-    component: SinglePost,
+    component: () => import("@/pages/SinglePost"),
+    meta: {
+      layout: LAYOUT_NAMES.DEFAULT,
+    },
+  },
+  {
+    path: ROUTER.LOGIN.path,
+    component: () => import("@/pages/AppLogin"),
+    meta: {
+      layout: LAYOUT_NAMES.LOGIN,
+    },
   },
 ];
 

@@ -26,6 +26,7 @@ export const POSTS = [
     id: 2,
     image: ArticleImage,
     tags: ["technology", "tech", "career"],
+
     tag: "FEATURED ARTICLE",
     title: "World’s Most Dangerous Technology Ever Made.",
     artist: "Leslie Pena",

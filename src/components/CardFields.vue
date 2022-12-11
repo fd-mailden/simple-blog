@@ -1,5 +1,5 @@
 <template lang="">
-  <p class="post__type">{{ post?.post_type }}</p>
+  <p class="post__type">{{ post?.tag }}</p>
   <h2
     class="post__title"
     :class="{
@@ -17,14 +17,14 @@
     <p class="post__artist">{{ post?.artist }}</p>
     <li class="post__date">{{ post?.date }}</li>
   </ul>
-  <div
+  <p
     class="post__text"
     :class="{
       sm: size === 'sm',
     }"
   >
     {{ post?.text }}
-  </div>
+  </p>
 </template>
 <script>
 export default {
@@ -54,6 +54,7 @@ export default {
   &__type {
     font-size: 20px;
     color: $main-gray;
+    text-transform: uppercase;
     @include max-fields(1);
   }
 

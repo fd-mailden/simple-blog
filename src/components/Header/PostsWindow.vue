@@ -8,7 +8,7 @@
       class="post"
       v-for="post in posts"
       :key="post.id"
-      @click = "$emit('navigate',  post.id)"
+      @click="$emit('navigate', post.id)"
     >
       <img :src="post.image" class="post__image" alt="post-image" />
       <div class="post__info">
@@ -20,6 +20,7 @@
 </template>
 <script>
 export default {
+
   props: {
     posts: {
       type: Array,
@@ -27,9 +28,7 @@ export default {
     isActive: {
       type: Boolean,
     },
-    
   },
-  
 };
 </script>
 <style lang="scss" scoped>

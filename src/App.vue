@@ -1,19 +1,19 @@
 <template>
-  <HeaderComponent />
-  <main class="container">
+  <component :is="layout">
     <router-view />
-  </main>
-
+  </component>
 </template>
 
 <script>
-import HeaderComponent from '@/components/Header/HeaderComponent.vue'
+// import HeaderComponent from "@/components/Header/HeaderComponent.vue";
 export default {
-  components: { HeaderComponent, },
-
-}
+  // components: { HeaderComponent },
+  computed: {
+    layout() {
+      return this.$route.meta.layout;
+    },
+  },
+};
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
