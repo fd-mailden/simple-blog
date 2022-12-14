@@ -20,7 +20,6 @@
 </template>
 <script>
 export default {
-
   props: {
     posts: {
       type: Array,
@@ -40,10 +39,12 @@ export default {
   padding: 10px;
   background-color: $main-white;
   opacity: 0;
+
   &--active {
     opacity: 1;
   }
 }
+
 .post {
   display: flex;
   align-items: center;
@@ -52,15 +53,18 @@ export default {
   &__image {
     width: 150px;
   }
+
   &__info {
     padding: 15px;
   }
+
   &__title {
     font-size: 16px;
     font-weight: 20;
     color: $main-black;
     @include max-fields(1);
   }
+
   &__author {
     font-size: 14px;
     color: $main-gray;

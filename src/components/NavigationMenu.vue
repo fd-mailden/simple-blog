@@ -1,5 +1,6 @@
 <script>
 import { ROUTER } from "@/settings/vue-routs";
+
 export default {
   data() {
     return {
@@ -36,6 +37,7 @@ export default {
     color: $main-black;
   }
 }
+
 .router-link-active {
   font-weight: 700;
 }

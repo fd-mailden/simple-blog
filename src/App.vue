@@ -2,12 +2,11 @@
   <component :is="layout">
     <router-view />
   </component>
+  <div class=""></div>
 </template>
 
 <script>
-// import HeaderComponent from "@/components/Header/HeaderComponent.vue";
 export default {
-  // components: { HeaderComponent },
   computed: {
     layout() {
       return this.$route.meta.layout;

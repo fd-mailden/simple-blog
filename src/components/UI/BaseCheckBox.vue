@@ -12,6 +12,7 @@ export default {
       type: String,
     },
   },
+
   name: "base-checkbox",
 };
 </script>
@@ -22,14 +23,15 @@ export default {
   align-items: center;
   cursor: pointer;
 }
+
 .checkbox {
   border-radius: 5px;
   border: $main-border;
   width: 18px;
   height: 17px;
   cursor: pointer;
-
 }
+
 .label {
   font-family: "Open Sans";
   font-weight: 400;

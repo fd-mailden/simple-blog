@@ -11,6 +11,10 @@ export const ROUTER = {
     path: "/tags",
     name: "Tags",
   },
+  TAG: {
+    path: "/tags/:id",
+    generate: (id) => `/tags/${id}`,
+  },
   POST: {
     path: "/post/:id",
     generate: (id) => `/post/${id}`,
@@ -20,4 +24,3 @@ export const ROUTER = {
     name: "Login",
   },
 };
-

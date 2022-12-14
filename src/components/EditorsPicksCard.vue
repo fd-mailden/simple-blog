@@ -2,12 +2,13 @@
   <div class="card">
     <img class="card__image" :src="post.image" />
     <div class="post">
-      <CardFields :post="post" v-if = "post"/>
+      <CardFields :post="post" v-if="post" />
     </div>
   </div>
 </template>
 <script>
 import CardFields from "./CardFields.vue";
+
 export default {
   components: { CardFields },
   props: {
@@ -20,7 +21,6 @@ export default {
 <style lang="scss" scoped>
 .card {
   margin: 50px auto;
-  max-width: 856px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -35,5 +35,6 @@ export default {
 .post {
   max-width: 430px;
   text-align: start;
+  margin-left: 37px;
 }
 </style>

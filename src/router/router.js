@@ -19,6 +19,13 @@ const routes = [
     },
   },
   {
+    path: ROUTER.TAG.path,
+    component: () => import("@/pages/AppTagLayout"),
+    meta: {
+      layout: LAYOUT_NAMES.DEFAULT,
+    },
+  },
+  {
     path: ROUTER.ABOUT.path,
     component: () => import("@/pages/AppAbout"),
     meta: {

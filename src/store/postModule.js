@@ -9,6 +9,8 @@ export const postModule = {
     currentAuthor: {},
     searchedPost: POSTS,
     searchQuery: "",
+    tagSearch:"",
+
   }),
   mutations: {
     setCurrentPost(state, post) {
@@ -22,6 +24,9 @@ export const postModule = {
     },
     setSearchQuery(state, text) {
       state.searchQuery = text;
+    },
+    setTagSearch(state, text) {
+      state.tagSearch = text;
     },
   },
   getters: {
@@ -37,6 +42,12 @@ export const postModule = {
         post.title.toLowerCase().includes(state.searchQuery.toLowerCase())
       );
     },
+    getTagSearchedPost(state){
+      if (!state.tagSearch) {
+        return state.posts;
+      }
+      return state.posts.filter((post)=>post.tags.includes((state.tagSearch.toLowerCase())))
+    }
   },
 
   actions: {
@@ -63,6 +74,7 @@ export const postModule = {
         commit("setSearchedPost", newPosts);
       }
     },
+
   },
 
   namespaced: true,
