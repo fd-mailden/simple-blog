@@ -1,61 +1,79 @@
 .banner {
-    max-height: 592px;
-    margin-top: 15px;
+  max-height: 592px;
+  margin-top: 15px;
+}
 
+.author-wrapper {
+  margin: 0 auto 167px;
+  max-width: 655px;
+}
+
+.about {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  color: $main-gray;
+  text-transform: uppercase;
 }
 
 .post {
-    margin: 54px auto 72px;
-    max-width: 652px;
+  margin: 54px auto 72px;
+  max-width: 652px;
 
-    &__title {
-        font-family: 'Libre Baskerville';
-        font-weight: 700;
-        font-size: 42px;
-        line-height: 52px;
-        color: $main-black;
-        text-align: center;
-    }
+  &__title {
+    font-family: 'Libre Baskerville';
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 52px;
+    color: $main-black;
+    text-align: center;
+  }
 
-    &__date {
-        margin-left: 30px;
-        font-size: 16px;
-    }
+  &__date {
+    margin-left: 30px;
+    font-size: 16px;
+  }
 
-    &__content {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-        color: $main-black;
-        font-family: 'Open Sans';
-    }
+  &__content {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $main-black;
+    font-family: 'Open Sans';
+  }
+
+  &__author {
+    color: $main-gray;
+  }
 }
 
 .list {
-    padding: 0;
-    margin: 17px auto 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $main-gray;
-    font-family: 'Open Sans';
-    font-weight: 400;
-    font-size: 16px;
-    list-style: disc;
+  padding: 0;
+  margin: 17px auto 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $main-gray;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 16px;
+  list-style: disc;
 
 }
 
 .tags {
-    color: $main-gray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 26px;
-    font-family: 'Open Sans';
-    &__item {
-        margin: 0 3px;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 22px;
-    }
+  color: $main-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+  font-family: 'Open Sans';
+
+  &__item {
+    margin: 0 3px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+  }
 }

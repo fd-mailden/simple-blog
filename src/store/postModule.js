@@ -1,5 +1,5 @@
-import { POSTS } from "@/consts/posts";
-import { AUTHORS } from "@/consts/authors";
+import {POSTS} from "@/consts/posts";
+import {AUTHORS} from "@/consts/authors";
 
 export const postModule = {
   state: () => ({
@@ -9,8 +9,7 @@ export const postModule = {
     currentAuthor: {},
     searchedPost: POSTS,
     searchQuery: "",
-    tagSearch:"",
-
+    tagSearch: "",
   }),
   mutations: {
     setCurrentPost(state, post) {
@@ -42,16 +41,18 @@ export const postModule = {
         post.title.toLowerCase().includes(state.searchQuery.toLowerCase())
       );
     },
-    getTagSearchedPost(state){
+    getTagSearchedPost(state) {
       if (!state.tagSearch) {
         return state.posts;
       }
-      return state.posts.filter((post)=>post.tags.includes((state.tagSearch.toLowerCase())))
-    }
+      return state.posts.filter((post) =>
+        post.tags.includes(state.tagSearch.toLowerCase())
+      );
+    },
   },
 
   actions: {
-    getPostInfo({ state, commit }, postId) {
+    getPostInfo({state, commit}, postId) {
       let currentPost = state.posts.find((post) => post.id == postId);
       if (!currentPost) return null;
       commit("setCurrentPost", currentPost);
@@ -62,7 +63,7 @@ export const postModule = {
       commit("setCurrentAuthor", currentAuthor);
     },
 
-    searchingPosts({ state, commit }, title) {
+    searchingPosts({state, commit}, title) {
       if (!state.searchQuery) {
         commit("setSearchedPost", state.posts);
       }
@@ -74,7 +75,24 @@ export const postModule = {
         commit("setSearchedPost", newPosts);
       }
     },
+    profileData({state}, authorNickname) {
+      let authorInfo = state.authors.find(
+        (author) => author.nickname === authorNickname
+      );
+      if (!authorInfo) {
+        return console.error('!');
+      }
+      let authorPosts = state.posts.filter((post) =>
+        post.artistNickName === authorNickname)
 
+      if (!authorPosts.length) {
+        return console.error('!')
+      }
+      return {
+        author: authorInfo,
+        posts: authorPosts
+      }
+    },
   },
 
   namespaced: true,

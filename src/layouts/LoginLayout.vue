@@ -1,7 +1,7 @@
 <template>
   <LoginHeader />
   <main class="container">
-    <slot></slot>
+    <slot/>
   </main>
   <footer></footer>
 </template>

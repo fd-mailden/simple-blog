@@ -14,7 +14,11 @@
       'sm-info': size === 'sm',
     }"
   >
-    <p class="post__artist">{{ post?.artist }}</p>
+    <router-link
+      :to="ROUTER.PROFILE.generate(post?.artistNickName)"
+      class="post__artist"
+      >{{ post?.artist }}</router-link
+    >
     <li class="post__date">{{ post?.date }}</li>
   </ul>
   <p
@@ -27,6 +31,8 @@
   </p>
 </template>
 <script>
+import { ROUTER } from "@/settings/vue-routs";
+
 export default {
   props: {
     post: {
@@ -35,6 +41,11 @@ export default {
     size: {
       type: String,
     },
+  },
+  data() {
+    return {
+      ROUTER,
+    };
   },
 };
 </script>

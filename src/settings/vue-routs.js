@@ -23,4 +23,8 @@ export const ROUTER = {
     path: "/login",
     name: "Login",
   },
+  PROFILE: {
+    path: "/profile/:id",
+    generate: (id) => `/profile/${id}`,
+  },
 };

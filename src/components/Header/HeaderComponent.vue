@@ -1,12 +1,14 @@
 <template lang="">
   <header class="header">
     <div class="navigate">
-      <img src="~@/assets/image/Logo-img.png" alt="" />
+      <router-link :to="ROUTER.MAIN.path">
+        <img src="~@/assets/image/Logo-img.png" alt="" />
+      </router-link>
       <NavigationMenu />
     </div>
     <div class="login">
       <HeaderSearch v-model="query" :posts="searchedPost" />
-      <base-button @click="$router.push(routes.LOGIN.path)">Login</base-button>
+      <base-button @click="$router.push(ROUTER.LOGIN.path)">Login</base-button>
     </div>
   </header>
 </template>
@@ -18,15 +20,16 @@ import { useDebouncedRef } from "@/hooks/useDebouncedRef";
 import { watch } from "vue";
 import { mapState, useStore } from "vuex";
 import { ROUTER } from "@/settings/vue-routs";
+
 export default {
   components: {
     NavigationMenu,
     HeaderSearch,
   },
   data() {
-    return{
-      routes:  ROUTER,
-    }
+    return {
+      ROUTER,
+    };
   },
   methods: {},
   computed: {

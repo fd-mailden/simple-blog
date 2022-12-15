@@ -1,8 +1,7 @@
-
-
 import { ROUTER } from "@/settings/vue-routs";
 import { createRouter, createWebHistory } from "vue-router";
-import {LAYOUT_NAMES} from '@/settings/rout-constants'
+import { LAYOUT_NAMES } from "@/settings/rout-constants";
+
 const routes = [
   {
     path: ROUTER.MAIN.path,
@@ -44,6 +43,13 @@ const routes = [
     component: () => import("@/pages/AppLogin"),
     meta: {
       layout: LAYOUT_NAMES.LOGIN,
+    },
+  },
+  {
+    path: ROUTER.PROFILE.path,
+    component: () => import("@/pages/AppProfile"),
+    meta: {
+      layout: LAYOUT_NAMES.DEFAULT,
     },
   },
 ];
