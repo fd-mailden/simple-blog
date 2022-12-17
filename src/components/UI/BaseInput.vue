@@ -54,12 +54,15 @@ export default {
   border: none;
   background-color: transparent;
   padding-left: 15px;
+  &::placeholder{
+    transition: all 0.1s ease-out;
+  }
   &:focus {
     border: none;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    text-align: center;
+
   }
   &:focus::placeholder {
     color: transparent;
