@@ -27,4 +27,10 @@ export const ROUTER = {
     path: "/profile/:id",
     generate: (id) => `/profile/${id}`,
   },
+  DASHBOARD: {
+    path: "/dashboard",
+    name: 'Dashboard'
+  },
 };
+
+

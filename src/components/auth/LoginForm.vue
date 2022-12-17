@@ -1,5 +1,5 @@
 <template>
-  <form class="form">
+  <form class="form" @submit.prevent>
     <base-input placeholder="Username" :marginTop="true"
       ><base-icon componentName="Human"
     /></base-input>
@@ -10,12 +10,25 @@
       <base-checkbox label="Remember me" />
       <button class="forgot-pass">Forgot Password?</button>
     </div>
-    <base-button className="full-width" type = "submit">Login</base-button>
+    <base-button className="full-width" type = "submit" @click = "navigateToDashboard">Login</base-button>
   </form>
 </template>
 
 <script>
-export default {};
+import {ROUTER} from "@/settings/vue-routs";
+export default {
+  data(){
+    return{
+      ROUTER
+    }
+  },
+  methods:{
+    navigateToDashboard(){
+      this.$router.push(ROUTER.DASHBOARD.path)
+    }
+  }
+
+};
 </script>
 
 <style lang="scss" scoped>

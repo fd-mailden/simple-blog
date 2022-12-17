@@ -52,6 +52,13 @@ const routes = [
       layout: LAYOUT_NAMES.DEFAULT,
     },
   },
+  {
+    path: ROUTER.DASHBOARD.path,
+    component: () => import("@/pages/dashboard/AppDashboard"),
+    meta: {
+      layout: LAYOUT_NAMES.DASHBOARD,
+    },
+  },
 ];
 
 const router = createRouter({

@@ -1,9 +1,9 @@
 <template>
   <nav class="dashboard-nav">
-    <a v-for="navItem in navList" :key="navItem" class="dashboard-nav__link">
-      <base-icon :component-name="navItem.icon"/>
-      <p class="dashboard-nav__text">{{navItem.name}}</p>
-    </a>
+      <a v-for="navItem in navList" :key="navItem" class="dashboard-nav__link">
+        <base-icon :component-name="navItem.icon" />
+        <p class="dashboard-nav__text">{{ navItem.name }}</p>
+      </a>
   </nav>
 </template>
 
@@ -46,17 +46,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.dashboard-nav{
+.dashboard-nav {
   display: block;
-  text-align: center;
-  &__link{
+  width: 100%;
+
+  &__link {
+    cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 20px 29px;
-
+    padding: 20px 30px;
+    transition: all 0.3s ease-out;
+    &:hover{
+      background-color: $light-gray;
+    }
   }
-  &__text{
+
+  &__text {
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;

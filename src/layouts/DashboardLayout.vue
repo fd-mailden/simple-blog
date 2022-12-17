@@ -1,9 +1,7 @@
 <template>
-  <header class="dashboard-header">
-    <img src="~@/assets/image/Logo-img.png" alt="" class="sidebar__logo" />
-  </header>
+  <DashboardHeader/>
   <section class="sidebar">
-    <router-link :to="ROUTER.MAIN.path">
+    <router-link v-if="router" :to="router.MAIN.path">
       <img src="~@/assets/image/Logo-img.png" alt="" class="sidebar__logo" />
     </router-link>
     <DashboardMenu />
@@ -15,16 +13,19 @@
 </template>
 
 <script>
+import { ROUTER } from "@/settings/vue-routs";
 import DashboardMenu from "@/components/Header/DashboardMenu.vue";
-import { ROUTER } from "@/router/router";
+import DashboardHeader from "@/components/Header/DashboardHeader.vue";
 
 export default {
-  components: { DashboardMenu },
+  components: {DashboardHeader, DashboardMenu },
+
   data() {
     return {
-      ROUTER,
+      router: ROUTER,
     };
   },
+  name: "DashboardLayout",
 };
 </script>
 
@@ -35,30 +36,22 @@ export default {
   left: 0;
   width: 15vw;
   height: 100vh;
-  background-color: $mian-dark;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-color: $main-dark;
+
 
   &__logo {
-    margin: 31px auto 51px;
+    margin: 31px 30px;
+    height: 57px;
+    width: 178px;
+
   }
 }
 
-.dashboard-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 85vw;
-  height: 110px;
-  background-color: $main-white;
-  display: flex;
-  flex-direction: row-reverse;
-}
+
 
 .dashboard {
   margin-top: 110px;
-  width: 85vw;
+  margin-left: 15vw;
+  padding: 30px;
 }
 </style>
