@@ -1,28 +1,33 @@
+import { notify } from "@kyvg/vue3-notification";
+
 export const authModule = {
   state: {
     isAuth: false,
-    authError: {
-      isError: false,
-      errMessage: "",
-    },
   },
   mutations: {
     setIsAuth(state, isAuth) {
       state.isAuth = isAuth;
-    },
-    setAuthError(state, error) {
-      state.authError = error;
+
     },
   },
-  getters: {},
+  getters: {
+    getIsAuth(state){
+      return state.isAuth
+    }
+  },
   actions: {
-    authorization({ commit }, formData) {
-      if (formData.login === "root@gmain.com" && formData.pass === "123") {
+    authorization({ commit }, { login, password, callback }) {
+      if (login === "root@gmain.com" && password === "123") {
         commit("setIsAuth", true);
+        callback();
+        notify({
+          type: "success",
+          title: "Welcome back!",
+        });
       } else {
-        commit("setAuthError", {
-          isError: false,
-          errMessage: "Invalid Login or Password",
+        notify({
+          type: "error",
+          title: "Invalid Login or Password",
         });
       }
     },

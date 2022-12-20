@@ -1,6 +1,7 @@
 import { ROUTER } from "@/settings/vue-routs";
 import { createRouter, createWebHistory } from "vue-router";
 import { LAYOUT_NAMES } from "@/settings/rout-constants";
+import store from "@/store";
 
 const routes = [
   {
@@ -64,6 +65,15 @@ const routes = [
 const router = createRouter({
   routes,
   history: createWebHistory(process.env.BASE_URL),
+});
+
+router.beforeEach((to) => {
+  if (to.path === ROUTER.DASHBOARD.path && !store.getters["auth/getIsAuth"]) {
+    router.push(ROUTER.LOGIN.path);
+  }
+  if (to.path === ROUTER.LOGIN.path && store.getters["auth/getIsAuth"]) {
+    router.push(ROUTER.DASHBOARD.path);
+  }
 });
 
 export default router;

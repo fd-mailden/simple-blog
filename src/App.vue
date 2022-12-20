@@ -2,7 +2,7 @@
   <component :is="layout">
     <router-view />
   </component>
-  <div class=""></div>
+  <notifications position="bottom left" closeOnClick :max="3" />
 </template>
 
 <script>
