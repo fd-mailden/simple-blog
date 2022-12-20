@@ -1,17 +1,14 @@
 <template>
   <nav class="dashboard-nav">
-      <a v-for="navItem in navList" :key="navItem" class="dashboard-nav__link">
-        <base-icon :component-name="navItem.icon" />
-        <p class="dashboard-nav__text">{{ navItem.name }}</p>
-      </a>
+    <a v-for="navItem in navList" :key="navItem" class="dashboard-nav__link">
+      <base-icon :component-name="navItem.icon" />
+      <p class="dashboard-nav__text">{{ navItem.name }}</p>
+    </a>
   </nav>
 </template>
 
 <script>
-import BaseIcon from "@/components/UI/BaseIcon.vue";
-
 export default {
-  components: { BaseIcon },
   data() {
     return {
       navList: [
@@ -56,7 +53,8 @@ export default {
     align-items: center;
     padding: 20px 30px;
     transition: all 0.3s ease-out;
-    &:hover{
+
+    &:hover {
       background-color: $light-gray;
     }
   }

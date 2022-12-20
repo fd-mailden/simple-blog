@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import NavigationMenu from "../NavigationMenu.vue";
+import NavigationMenu from "../navigation/NavigationMenu.vue";
 import HeaderSearch from "./HeaderSearch.vue";
 import { useDebouncedRef } from "@/hooks/useDebouncedRef";
 import { watch } from "vue";

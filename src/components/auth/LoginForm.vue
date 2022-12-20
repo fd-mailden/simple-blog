@@ -4,31 +4,30 @@ import { ROUTER } from "@/settings/vue-routs";
 import { useRouter } from "vue-router";
 import useVuelidate from "@vuelidate/core";
 import { required, maxLength, email } from "@vuelidate/validators";
-import { useStore } from 'vuex'
+import { useStore } from "vuex";
 
-const store = useStore()
+const store = useStore();
 const router = useRouter();
 const formData = reactive({
   login: "",
   password: "",
 });
-const rules = computed(()=>{
+const rules = computed(() => {
   return {
-    login: { required , email},
-    password: { required, maxLength: maxLength(8), },
-  }
-})
+    login: { required, email },
+    password: { required, maxLength: maxLength(8) },
+  };
+});
 
 const v$ = useVuelidate(rules, formData);
-const callback = () =>{
-   router.push(ROUTER.DASHBOARD.path);
-
-}
+const callback = () => {
+  router.push(ROUTER.DASHBOARD.path);
+};
 
 async function navigateToDashboard() {
   const result = await v$.value.$validate();
   if (result) {
-    store.dispatch('auth/authorization', {...formData,callback })
+    store.dispatch("auth/authorization", { ...formData, callback });
   }
 }
 </script>
@@ -39,22 +38,27 @@ async function navigateToDashboard() {
       placeholder="Username"
       :marginTop="true"
       v-model="formData.login"
+      type="email"
     >
       <base-icon componentName="Human" />
     </base-input>
-    <p v-for=" error in v$.login.$errors" :key = "error.$uid" class = "error-notify">
-      {{error.$message}}
+    <p v-for="error in v$.login.$errors" :key="error.$uid" class="error-notify">
+      {{ error.$message }}
     </p>
     <base-input
       placeholder="Password"
       :marginTop="true"
       v-model="formData.password"
-      type = "password"
+      type="password"
     >
       <base-icon componentName="KeyIcon" />
     </base-input>
-    <p v-for=" error in v$.password.$errors" :key = "error.$uid" class = "error-notify">
-      {{error.$message}}
+    <p
+      v-for="error in v$.password.$errors"
+      :key="error.$uid"
+      class="error-notify"
+    >
+      {{ error.$message }}
     </p>
     <div class="remember">
       <base-checkbox label="Remember me" />
@@ -96,7 +100,8 @@ async function navigateToDashboard() {
   line-height: 16px;
   color: $main-gray;
 }
-.error-notify{
+
+.error-notify {
   color: #e73737;
   margin-bottom: 10px;
   font-size: 14px;

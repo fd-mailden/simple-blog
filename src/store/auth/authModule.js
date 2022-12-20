@@ -2,7 +2,7 @@ import { notify } from "@kyvg/vue3-notification";
 
 export const authModule = {
   state: {
-    isAuth: false,
+    isAuth: true,
   },
   mutations: {
     setIsAuth(state, isAuth) {

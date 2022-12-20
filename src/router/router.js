@@ -2,6 +2,7 @@ import { ROUTER } from "@/settings/vue-routs";
 import { createRouter, createWebHistory } from "vue-router";
 import { LAYOUT_NAMES } from "@/settings/rout-constants";
 import store from "@/store";
+import { dashboard } from "@/router/dashboardRuret";
 
 const routes = [
   {
@@ -53,14 +54,7 @@ const routes = [
       layout: LAYOUT_NAMES.DEFAULT,
     },
   },
-  {
-    path: ROUTER.DASHBOARD.path,
-    component: () => import("@/pages/dashboard/AppDashboard"),
-    meta: {
-      layout: LAYOUT_NAMES.DASHBOARD,
-    },
-  },
-];
+].concat(dashboard);
 
 const router = createRouter({
   routes,
