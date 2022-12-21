@@ -1,5 +1,5 @@
 <template>
-  <DashboardHeader/>
+  <DashboardHeader />
   <section class="sidebar">
     <router-link v-if="router" :to="router.MAIN.path">
       <img src="~@/assets/image/Logo-img.png" alt="" class="sidebar__logo" />
@@ -18,7 +18,7 @@ import DashboardMenu from "@/components/Header/DashboardMenu.vue";
 import DashboardHeader from "@/components/Header/DashboardHeader.vue";
 
 export default {
-  components: {DashboardHeader, DashboardMenu },
+  components: { DashboardHeader, DashboardMenu },
 
   data() {
     return {
@@ -38,20 +38,15 @@ export default {
   height: 100vh;
   background-color: $main-dark;
 
-
   &__logo {
     margin: 31px 30px;
     height: 57px;
     width: 178px;
-
   }
 }
-
-
 
 .dashboard {
   margin-top: 110px;
   margin-left: 15vw;
-  padding: 30px;
 }
 </style>

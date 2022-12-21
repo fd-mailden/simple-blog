@@ -31,7 +31,7 @@ export default {
   top: 0;
   right: 0;
   width: 85vw;
-  height: 110px;
+  height: 50px;
   background-color: $main-white;
   display: flex;
   flex-direction: row-reverse;
