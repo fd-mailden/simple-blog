@@ -42,7 +42,6 @@ export default {
 <style lang="scss" scoped>
 .card {
   padding: 10px;
-  height: 110px;
   width: 176px;
   border: 2px solid rgba(28, 28, 28, 0.35);
   border-radius: 10px;

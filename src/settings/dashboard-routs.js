@@ -3,6 +3,10 @@ export const DASHBOARD_ROUTS = {
     path: "/dashboard",
     name: "Dashboard",
   },
+  PROFILE:{
+    path: "/dashboard/profile",
+    name: "Profile",
+  },
   WRITE_POST: {
     path: "/dashboard/write_post",
     name: "Write a Post",

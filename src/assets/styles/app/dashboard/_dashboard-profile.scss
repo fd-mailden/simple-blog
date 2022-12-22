@@ -1,0 +1,33 @@
+.profile {
+  padding: 20px 42px;
+  width: 1350px;
+
+  &__textarea {
+    box-sizing: border-box;
+    font-family: "Open Sans";
+    background: #f8f8f8;
+    border-radius: 10px;
+    height: 100px;
+    padding: 14px;
+    width: 100%;
+    resize: none;
+    border: none;
+    margin: 20px 0;
+    @include scrollbar;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.input-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+
+}
+
+

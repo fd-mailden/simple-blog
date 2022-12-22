@@ -38,5 +38,9 @@ export default {
   &--full-width{
     width: 100%;
   }
+  &:hover{
+    border-width: 3px;
+    padding: 11px;
+  }
 }
 </style>

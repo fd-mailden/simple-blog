@@ -18,9 +18,9 @@ export default {
     placeholder: {
       type: String,
     },
-    marginTop: {
-      type: Boolean,
-    },
+    marginTop: [Boolean],
+    margin: [Boolean],
+    marginRight: [Boolean, Number],
   },
   methods: {
     updateInput(event) {
@@ -31,6 +31,8 @@ export default {
     classObject: function () {
       return {
         "input-wrapper--margin-bottom": this.marginTop,
+        "input-wrapper--margin-right": this.marginRight,
+        "input-wrapper--margin": this.margin,
       };
     },
   },
@@ -45,25 +47,37 @@ export default {
   display: flex;
   align-items: center;
   padding: 0 14px;
+
   &--margin-bottom {
-    margin-bottom: 14px;
+    margin-bottom: 15px;
+  }
+
+  &--margin-right {
+    margin-right: 15px;
+  }
+
+  &--margin {
+    margin: 15px;
   }
 }
+
 .input {
   width: 100%;
   border: none;
   background-color: transparent;
   padding-left: 15px;
-  &::placeholder{
+
+  &::placeholder {
     transition: all 0.1s ease-out;
   }
+
   &:focus {
     border: none;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-
   }
+
   &:focus::placeholder {
     color: transparent;
   }
