@@ -1,5 +1,8 @@
-import {POSTS} from "@/consts/posts";
-import {AUTHORS} from "@/consts/authors";
+import { POSTS } from "@/consts/posts";
+import { AUTHORS } from "@/consts/authors";
+import { actions } from "@/store/posts/actionsPosts";
+import { getters } from "@/store/posts/gettersPosts";
+import { mutations } from "@/store/posts/mutationsPosts";
 
 export const postModule = {
   state: () => ({
@@ -11,89 +14,8 @@ export const postModule = {
     searchQuery: "",
     tagSearch: "",
   }),
-  mutations: {
-    setCurrentPost(state, post) {
-      state.currentPost = post;
-    },
-    setCurrentAuthor(state, author) {
-      state.currentAuthor = author;
-    },
-    setSearchedPost(state, posts) {
-      state.searchedPost = posts;
-    },
-    setSearchQuery(state, text) {
-      state.searchQuery = text;
-    },
-    setTagSearch(state, text) {
-      state.tagSearch = text;
-    },
-  },
-  getters: {
-    getLastPosts(state) {
-      let newPosts = [...state.posts];
-      return newPosts.splice(-3);
-    },
-    searchPosts(state) {
-      if (!state.searchQuery) {
-        return state.posts;
-      }
-      return state.posts.filter((post) =>
-        post.title.toLowerCase().includes(state.searchQuery.toLowerCase())
-      );
-    },
-    getTagSearchedPost(state) {
-      if (!state.tagSearch) {
-        return state.posts;
-      }
-      return state.posts.filter((post) =>
-        post.tags.includes(state.tagSearch.toLowerCase())
-      );
-    },
-  },
-
-  actions: {
-    getPostInfo({state, commit}, postId) {
-      let currentPost = state.posts.find((post) => post.id == postId);
-      if (!currentPost) return null;
-      commit("setCurrentPost", currentPost);
-      let currentAuthor = state.authors.find(
-        (author) => author.id == currentPost.id
-      );
-      if (!currentAuthor) return null;
-      commit("setCurrentAuthor", currentAuthor);
-    },
-
-    searchingPosts({state, commit}, title) {
-      if (!state.searchQuery) {
-        commit("setSearchedPost", state.posts);
-      }
-
-      let newPosts = state.posts.filter((post) =>
-        post.title.toLowerCase().includes(title.toLowerCase())
-      );
-      if (newPosts.length > 0) {
-        commit("setSearchedPost", newPosts);
-      }
-    },
-    profileData({state}, authorNickname) {
-      let authorInfo = state.authors.find(
-        (author) => author.nickname === authorNickname
-      );
-      if (!authorInfo) {
-        return console.error('!');
-      }
-      let authorPosts = state.posts.filter((post) =>
-        post.artistNickName === authorNickname)
-
-      if (!authorPosts.length) {
-        return console.error('!')
-      }
-      return {
-        author: authorInfo,
-        posts: authorPosts
-      }
-    },
-  },
-
+  mutations,
+  getters,
+  actions,
   namespaced: true,
 };

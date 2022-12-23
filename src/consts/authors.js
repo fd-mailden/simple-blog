@@ -21,7 +21,7 @@ export const AUTHORS = [
     id: 2,
     avatar: avatar,
     name: "Arthur Black",
-    nickname: "arthurblack",
+    nickname: "lesliePena",
     description:
       "Ipsum adipisicing culpa est nisi consequat ex amet magna culpa veniam tempor irure ea. Reprehenderit labore do tempor eiusmod in consectetur ex sunt id mollit commodo ipsum deserunt quis.",
   },
