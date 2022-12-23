@@ -35,9 +35,9 @@ export default {
           path: DASHBOARD_ROUTS.WRITE_POST.path,
         },
         {
-          name: "All Posts",
+          name: DASHBOARD_ROUTS.ALL_POSTS.name,
           icon: "PostsIcon",
-          path: DASHBOARD_ROUTS.DASHBOARD_MAIN.path,
+          path: DASHBOARD_ROUTS.ALL_POSTS.path,
         },
         {
           name: "Resources",

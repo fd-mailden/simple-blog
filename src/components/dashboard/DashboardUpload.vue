@@ -1,15 +1,15 @@
 <script setup>
-import { ref, defineProps, toRefs, computed } from "vue";
+import { ref, defineProps, toRefs,  } from "vue";
 
 const props = defineProps({
-  size: [Boolean],
+  size: String,
 });
 
 const { size } = toRefs(props);
 
-const classObject = computed(() => {
-  return { 'avatar--large': size };
-});
+// const classObject = computed(() => {
+//   size == 'large' && ''
+// });
 
 const file = ref(null);
 const handleFileUpload = async () => {
@@ -21,7 +21,7 @@ const handleFileUpload = async () => {
 };
 </script>
 <template>
-  <div class="avatar" :class="classObject">
+  <div class="avatar" :class="size">
     <img
       id="avatar"
       src="~@/assets/image/download.png"
@@ -85,7 +85,10 @@ const handleFileUpload = async () => {
 
   &--large {
     width: 100%;
-    height: 500px;
+    height: 590px;
+    img{
+      object-fit: cover;
+    }
   }
 }
 </style>

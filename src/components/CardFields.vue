@@ -1,13 +1,14 @@
 <template lang="">
   <p class="post__type">{{ post?.tag }}</p>
-  <h2
+  <router-link
+   :to="ROUTER.POST.generate(post?.id)"
     class="post__title"
     :class="{
       sm: size === 'sm',
     }"
   >
     {{ post?.title }}
-  </h2>
+  </router-link>
   <ul
     class="post__info"
     :class="{
@@ -77,6 +78,9 @@ export default {
     line-height: 41px;
     color: $main-black;
     @include max-fields(2);
+    &:hover{
+      text-decoration: underline;
+    }
   }
 
   &__info {

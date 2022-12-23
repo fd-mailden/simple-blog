@@ -989,6 +989,11 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
+"@headlessui/vue@^1.7.7":
+  version "1.7.7"
+  resolved "https://registry.yarnpkg.com/@headlessui/vue/-/vue-1.7.7.tgz#db7f2ffde01b9d1f6e9adce53c5de73d73399c08"
+  integrity sha512-dkdNhJkxyT9rXW5fHx/MkKaM3U13P3duYuwoGTRmDGjE7xAsvcWOSJRJpw1AmCQTvjZF44bh2wSlySLaHW+WuQ==
+
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"

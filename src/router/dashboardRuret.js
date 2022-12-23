@@ -18,8 +18,8 @@ export const dashboard = [
     meta: { layout: LAYOUT_NAMES.DASHBOARD },
   },
   {
-    path: DASHBOARD_ROUTS.WRITE_POST.path,
-    component: () => import("@/pages/dashboard/AppDashboard"),
+    path: DASHBOARD_ROUTS.ALL_POSTS.path,
+    component: () => import("@/pages/dashboard/AppDashboardPosts.vue"),
     meta: { layout: LAYOUT_NAMES.DASHBOARD },
   },
   {
