@@ -1,24 +1,15 @@
 <script setup>
-import { ref } from "vue";
 import DashboardUpload from "@/components/dashboard/DashboardUpload.vue";
 import BaseInput from "@/components/UI/BaseInput.vue";
 import BaseTextarea from "@/components/UI/BaseTextarea.vue";
 import BaseButton from "@/components/UI/BaseButton.vue";
 import TagsSelect from "@/components/TagsSelect.vue";
+import { useTagsMethods } from "@/hooks/useTagsMethods";
 
-const tags = ref([]);
-
-const setTags = (tag) => {
-  let currentTag = tags.value.find((thisTag) => thisTag.id === tag.id);
-  if (currentTag) {
-    return null;
-  }
-  tags.value.push(tag);
-};
-const deleteTag = (tag) => {
-  console.log(tag);
-  tags.value = tags.value.filter((currentTag) => currentTag.id !== tag.id);
-};
+const {
+  currentTags,
+  methods: { setTags, deleteTag },
+} = useTagsMethods([]);
 </script>
 <template>
   <form @submit.prevent class="post">
@@ -27,7 +18,7 @@ const deleteTag = (tag) => {
       <TagsSelect
         :delete-tag="deleteTag"
         :set-tag="setTags"
-        :currentTags="tags"
+        :currentTags="currentTags"
       />
       <BaseInput placeholder="Title" />
       <BaseTextarea placeholder="Text" resize />
