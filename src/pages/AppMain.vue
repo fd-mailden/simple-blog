@@ -13,7 +13,6 @@ import { mapGetters } from "vuex";
 
 export default {
   components: { ArtBanner, EditorsPicks, SortSection },
-
   data() {
     return {};
   },

@@ -1,13 +1,16 @@
 *{
   @include scrollbar;
+  box-sizing: border-box;
 }
 
 main{
   min-height: 100vh;
 }
 img {
+   width: 100%;
+  height: 100%;
   object-fit: cover;
-  width: 100%;
+  object-position: center center;
 }
 
 p {

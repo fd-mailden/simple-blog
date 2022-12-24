@@ -3,8 +3,8 @@ import { USER_DATA } from "@/consts/userData";
 
 export const authModule = {
   state: {
-    isAuth: false,
-    userInfo: {},
+    isAuth: true,
+    userInfo: USER_DATA,
   },
   mutations: {
     setIsAuth(state, isAuth) {
@@ -17,6 +17,9 @@ export const authModule = {
   getters: {
     getIsAuth(state) {
       return state.isAuth;
+    },
+    getUserPosts(state) {
+      return state.userInfo.posts;
     },
   },
   actions: {

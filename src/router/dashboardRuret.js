@@ -9,7 +9,7 @@ export const dashboard = [
   },
   {
     path: DASHBOARD_ROUTS.PROFILE.path,
-    component: () => import("@/pages/dashboard/AppProfile.vue"),
+    component: () => import("@/pages/dashboard/AppDashboardProfile.vue"),
     meta: { layout: LAYOUT_NAMES.DASHBOARD },
   },
   {

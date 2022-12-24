@@ -20,6 +20,7 @@ import EditorsPicksCard from "@/components/EditorsPicksCard.vue";
 import ArtBanner from "@/components/ArtBanner";
 import { mapActions } from "vuex";
 
+
 export default {
   components: {
     AuthorAbout,

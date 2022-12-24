@@ -1,15 +1,18 @@
 <template>
-  <DashboardHeader />
-  <section class="sidebar">
-    <router-link v-if="router" :to="router.MAIN.path">
-      <img src="~@/assets/image/Logo-img.png" alt="" class="sidebar__logo" />
-    </router-link>
-    <DashboardMenu />
-  </section>
-
-  <main class="dashboard">
-    <slot />
-  </main>
+  <div class="dashboard">
+    <section class="sidebar">
+      <router-link v-if="router" :to="router.MAIN.path">
+        <img src="~@/assets/image/Logo-img.png" alt="" class="sidebar__logo" />
+      </router-link>
+      <DashboardMenu />
+    </section>
+    <main class="dashboard__main">
+      <DashboardHeader />
+      <div class="dashboard__slot">
+        <slot />
+      </div>
+    </main>
+  </div>
 </template>
 
 <script>
@@ -30,11 +33,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.dashboard {
+  display: flex;
+  height: 100vh;
+  align-items: flex-start;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  &__main {
+    position: relative;
+    margin-top: 120px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 100vh;
+    width: 85%;
+
+  }
+  &__slot{
+    overflow-y: scroll;
+    height: 86vh;
+    padding-bottom: 100px;
+
+  }
+}
+
 .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 15vw;
+  width: 15%;
   height: 100vh;
   background-color: $main-dark;
 
@@ -43,10 +67,5 @@ export default {
     height: 57px;
     width: 178px;
   }
-}
-
-.dashboard {
-  margin-top: 110px;
-  margin-left: 15vw;
 }
 </style>

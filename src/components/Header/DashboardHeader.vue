@@ -30,12 +30,14 @@ export default {
   position: fixed;
   top: 0;
   right: 0;
-  width: 85vw;
-  height: 50px;
+  width: 85%;
+  z-index: 1;
+  box-sizing: border-box;
   background-color: $main-white;
   display: flex;
   flex-direction: row-reverse;
   padding: 25px 30px;
+  box-shadow: -1px 4px 20px -5px rgba(0,0,0,0.75);
 
   &__avatar {
     border-radius: 50%;
